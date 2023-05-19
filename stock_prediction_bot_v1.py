@@ -25,7 +25,7 @@ for library in required_libraries:
 def read_google_sheet(sheet_name):
     # Set up credentials and access the Google Sheet
     scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
-    credentials = ServiceAccountCredentials.from_json_keyfile_name('C:/Users/jilan/OneDrive/Desktop/Stock Prediction/stock-prediction-386402-75a0ee997a02.json', scope)
+    credentials = ServiceAccountCredentials.from_json_keyfile_name('Credentials.json', scope)
     client = gspread.authorize(credentials)
     
     try:
@@ -126,7 +126,7 @@ def train_and_evaluate_model(X, y):
 
 def main():
     # Step 1: Google Sheet Integration
-    sheet_name = "Stock Sheet" # Replace with the actual sheet name
+    sheet_name = "Sheet Name" # Replace with the actual sheet name
     data = retrieve_historical_data(sheet_name)
     if data is None:
         print("Data retrieval failed. Exiting the program.")
